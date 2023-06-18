@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+background: linear-gradient(to bottom, black, rgb(64, 76, 116));
+font-family: 'Roboto Mono', monospace;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+padding-top: 150px;
+}
+.text{
+font-size: 15px;
+color: white;
+}
+.profile {
+display: flex;
+align-items: center;
+text-align: center;
+margin-top: -350px;
+}
+.profile-image {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+margin-right: 20px;
+}
+.profile-name {
+font-size: 28px;
+color: white;
+margin-bottom: 5px;
+}
+.profile-alias {
+font-size: 14px;
+font-family: 'Roboto Mono', monospace;
+font-weight: bold;
+color: rgb(136, 136, 136);
+}
+.icons {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+.icons a {
+display: inline-block;
+margin: 0 10px;
+color: white;
+}
+.icons a img {
+height: 40px;
+width: 40px;
+}
+.fa {
+  padding: 15px;
+  font-size: 30px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+} 
+.fa-linkedin{
+  background: #3B5998;
+}
+.fa-github{
+  background: #3d3333;
+}
+.fa-envelope{
+  background: #1a1a1a;
+}
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .profile-name {
+    font-size: 24px;
+  }
+  .icons {
+    margin-top: 10px;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img class="profile-image" src="https://media.licdn.com/dms/image/D4E03AQE-EyoQWJSmXw/profile-displayphoto-shrink_800_800/0/1686854407038?e=1692230400&v=beta&t=KaU_QWf96xDNWnoLjEj50CfXu4GhURKNBOQ08KtA8JI" alt="Profile Picture">
+      <div>
+        <div class="profile-name">Leonardo Cremonti</div>
+        <div class="profile-alias">l3ox64 <br> Milan, Italy 🇮🇹</div>
+      </div>
+    </div>
+    <h1></h1>
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/leonardo-cremonti-45344123b/" class="fa fa-linkedin"></a>
+      <a href="https://github.com/l3ox64" class="fa fa-github"></a>
+      <a href="mailto:cremonti.leonardo@gmail.com" class="fa fa-envelope" onclick="copymail()"></a>
+    </div>
+
+    <h1 class="text" style="margin-top: 80px;">-Daily learning for developer growth.</h1>
+  </div>
+
+  <script>
+    function copymail(){
+      var mail = "cremonti.leonardo@gmail.com";
+      navigator.clipboard.writeText(mail);
+      alert("Email copied to clipboard!");
+    }
+  </script>
+
+</body>
+</html>
