@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = 7000;
 
 
-app.get('/leo', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/resource/leo.html');
 });
 
