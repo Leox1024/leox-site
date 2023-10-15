@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 7000;
-
+const port = 9000;
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/resource/leo.html');
+    res.sendFile(__dirname + '/public/leo.html');
 });
 
 // route non trovate
