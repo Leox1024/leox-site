@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -594,6 +595,73 @@ width: 40px;
     transform-origin: -20vw -5vh;
     box-shadow: 2vmin 0 0.8662625454206778vmin currentColor;
 }
+.popup {
+  position: absolute;
+  margin-top: -350px;
+  margin-right: 300px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.popup .popuptext {
+  visibility: hidden;
+  width: 460px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  
+}
+@media only screen and (max-width: 767px) {
+  .popup {
+    position: absolute;
+    margin-top: -40px;
+    margin-right: 300px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+} 
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -614,14 +682,34 @@ width: 40px;
       <a href="https://www.linkedin.com/in/leonardo-cremonti-45344123b/" class="fa fa-linkedin"></a>
       <a href="https://github.com/l3ox64" class="fa fa-github"></a>
       <a href="mailto:cremonti.leonardo@gmail.com" class="fa fa-envelope" onclick="copymail()"></a>
-      <a href="" class="fa fa-btc"></a>
+      <a href="#" class="fa fa-btc" onclick="myFunction()"></a>
+    </div>
+    
+    
+    <div class="popup" onclick="myFunction()">
+        <span class="popuptext" id="myPopup">bc1qrr334q6jnux5zt9al9tnwsp3pdpl50zls89q7q</span>
     </div>
 
     <h1 class="text" style="margin-top: 80px;">-i'm only passionately curious.</h1>
     <h1></h1>
-    <a href="https://network.l3ox.me" class="btn">MyHomeLab - Networking Project</a>
+    <a href="https://network.leox.me" class="btn"> MyHomeLab - Networking Project</a>
   </div>
- 
+
+
+  <script>
+   // When the user clicks on div, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        var key = "bc1qrr334q6jnux5zt9al9tnwsp3pdpl50zls89q7q";
+        
+        popup.classList.toggle("show");
+        navigator.clipboard.writeText(key);
+
+        setTimeout(function() { alert("Address copied to clipboard!"); }, 1000);
+
+    }
+  </script>
+  
 
 
   <div class="background">
