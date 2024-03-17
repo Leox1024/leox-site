@@ -22,9 +22,17 @@ buttons.forEach(btn => {
 
 
 function btc() {
-    var key = "bc1qrr334q6jnux5zt9al9tnwsp3pdpl50zls89q7q";
+    var key = "bc1q7s2yhyru8yzy6873qyq9wnuxwgj950k2t9jhzq";
 
     navigator.clipboard.writeText(key);
     alert("Address copied to clipboard!");
+
+}
+
+function cpmail() {
+  var key = "leonardo@leox.me";
+
+  navigator.clipboard.writeText(key);
+  alert("Email copied to clipboard!");
 
 }
