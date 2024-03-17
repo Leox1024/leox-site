@@ -11,6 +11,10 @@
 body {
   color: #2b2c48;
   font-family: "Jost", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
