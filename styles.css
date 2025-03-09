@@ -9,7 +9,7 @@
 }
 
 body {
-  color: #2b2c48;
+  color: #000000;
   font-family: "Jost", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
@@ -446,12 +446,12 @@ body {
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-  background-color: white;
+  background-color: rgb(217, 215, 215);
   display: flex;
   transition: 0.3s;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 8px rgba(71, 65, 65, 0.2);
 }
 
 .card[data-state="#about"] {
@@ -584,7 +584,7 @@ body {
 
 .card-desc {
   line-height: 1.6;
-  color: #636b6f;
+  color: #2d2c2c;
   font-size: 14px;
   margin: 0;
   font-weight: 400;
@@ -624,7 +624,7 @@ body {
 
 .card-buttons {
   display: flex;
-  background-color: #fff;
+  background-color: rgb(217, 215, 215);
   margin-top: auto;
   position: sticky;
   bottom: 0;
@@ -730,7 +730,7 @@ body {
 
 .card-item-desc {
   font-size: 13px;
-  color: #6f6f7b;
+  color: #5a5a5d;
   line-height: 1.5;
   font-family: "DM Sans", sans-serif;
 }
@@ -743,7 +743,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 13px;
-  color: #6f6f7b;
+  color: #5a5a5d;
   font-family: "DM Sans", sans-serif;
   line-height: 1.6;
   cursor: pointer;
