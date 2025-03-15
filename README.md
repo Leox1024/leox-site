@@ -1,5 +1,4 @@
 ## My personal webpage
 
-bash
-```
+bash ```
 https://leox.me
