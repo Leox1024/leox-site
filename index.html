@@ -5,22 +5,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>leox – Portfolio</title>
-  <meta name="description" content="Minimal engineer-style personal page: education, experience, projects, skills." />
+  <meta name="description" content="Leonardo Cremonti (Leox)" />
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{ --fg:#111; --muted:#555; --accent:#0a0a0a }
     html,body{height:100%}
-    body{ margin:0; padding:24px; background:#F4F4F4; color:var(--fg);
+    body{
+      margin:0; padding:24px; background:#F4F4F4; color:var(--fg);
       font-family:"Inconsolata", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      line-height:1.6; font-size:16px; }
+      line-height:1.6; font-size:16px;
+    }
     .wrap{max-width:900px; margin:0 auto}
-    header{ display:flex; gap:24px; align-items:center; justify-content:space-between;
-      border-bottom:1px solid #e5e5e5; padding-bottom:20px; margin-bottom:28px; }
+    header{
+      display:flex; gap:24px; align-items:center; justify-content:space-between;
+      /* no bottom border */
+      padding-bottom:20px; margin-bottom:28px;
+    }
     .id{flex:1}
     .name{font-weight:700; font-size:28px; letter-spacing:0.3px; margin:0}
     .tagline{margin:6px 0 0; color:var(--muted)}
-    .links{margin-top:10px; display:flex; gap:16px; flex-wrap:wrap}
-    .links a{color:var(--accent); text-decoration:underline}
     .avatar{width:112px; height:112px; border-radius:8px; object-fit:cover; border:1px solid #e5e5e5}
 
     section{margin:40px 0}
@@ -30,32 +33,48 @@
     .sub{color:var(--muted)}
     ul{margin:8px 0 0 18px}
     li{margin:4px 0}
-    footer{margin-top:40px; padding-top:16px; border-top:1px solid #e5e5e5; color:var(--muted); font-size:14px}
+    footer{margin-top:40px; padding-top:16px; padding-bottom:24px; margin-bottom:40px; border-top:1px solid #e5e5e5; color:var(--muted); font-size:14px}
 
-    @media (max-width:640px){ header{flex-direction:column; align-items:flex-start} .avatar{width:96px; height:96px} }
+    @media (max-width:640px){
+      header{flex-direction:column; align-items:flex-start}
+      .avatar{width:96px; height:96px}
+    }
   </style>
 </head>
+
+<!-- ====================================================================== -->
+
 <body>
   <main class="wrap">
+
+    <!-- ================================================================== -->
+
     <header>
       <div class="id">
         <h1 class="name">Hi, I'm Leonardo – leox</h1>
-        <p class="tagline">Italian computer student based in Milan. Minimal, pragmatic, engineer-style.</p>
-        <div class="links">
-          <a href="mailto:leonardo@leox.me">leonardo@leox.me</a>
-          <a href="https://github.com/Leox1024" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://network.leox.me" target="_blank" rel="noreferrer">Homelab</a>
-        </div>
+        <p class="tagline">
+          I’m Leonardo Cremonti, also known as Leox. I’m an Italian computer science student based in Milan.
+          I don’t lock myself into a single thing — I tend to be a “jack of all trades.”
+          I’m currently studying Software Engineering. Find me on
+          <a href="https://x.com/Leox1024" target="_blank" rel="noopener noreferrer">X</a>,
+          <a href="https://www.linkedin.com/in/leonardo-cremonti-45344123b" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+          <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+          or <a href="mailto:leonardo@leox.me">send me an email</a>.
+        </p>
       </div>
       <img class="avatar" src="https://avatars.githubusercontent.com/u/93765605?v=4" alt="Profile" />
     </header>
 
+    <!-- ================================================================== -->
+
     <section id="education">
       <h2>Education</h2>
       <div class="item">
-        <b>Politecnico of Milan</b> <span class="sub">— Computer Science (SWE).</span>
+        <b>Politecnico di Milano</b> <span class="sub">— Computer Science (Software Engineering).</span>
       </div>
     </section>
+
+    <!-- ================================================================== -->
 
     <section id="experience">
       <h2>Experience</h2>
@@ -69,70 +88,89 @@
       </div>
     </section>
 
+    <!-- ================================================================== -->
+
     <section id="projects">
       <h2>Projects</h2>
       <div class="item">
-        <b>Homelab</b> — <a href="https://network.leox.me" target="_blank" rel="noreferrer">network.leox.me</a>
-        <div class="sub">Cluster, virtualization, personal services. Infrastructure-as-code where it makes sense.</div>
+        <b>Homelab</b> — <a href="https://network.leox.me" target="_blank" rel="noopener noreferrer">network.leox.me</a>
+        <div class="sub">Cluster, virtualization, personal services.</div>
       </div>
       <div class="item">
-        <b>GitHub</b> — <a href="https://github.com/Leox1024" target="_blank" rel="noreferrer">Leox1024</a>
+        <b>GitHub</b> — <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">Leox1024</a>
         <div class="sub">Small tools, experiments and notes.</div>
       </div>
     </section>
 
+    <!-- ================================================================== -->
+
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>Linux, Shell </li>
+        <li>Linux, Shell</li>
         <li>Docker, Kubernetes</li>
-        <li>AWS, Azure </li>
-        <li>Git, CI/CD </li>
-        <li>PostgreSQL, Nginx  </li>
-        <li>C/C++, Python, Rust </li>
-        <li>Arduino / embedded </li>
-        <li>Electronics </li>
+        <li>AWS, Azure</li>
+        <li>Git, CI/CD</li>
+        <li>PostgreSQL, Nginx</li>
+        <li>C/C++, Python, Rust</li>
+        <li>Arduino / embedded</li>
+        <li>Electronics</li>
       </ul>
     </section>
+
+    <!-- ================================================================== -->
 
     <section id="posts">
       <h2>Latest Posts</h2>
       <ul style="list-style:none; padding:0; margin:0">
+
+        <!-- -------------------------------------------------------------- -->
         <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/vlansetupopnsensewithl3switch/" 
-             target="_blank" rel="noreferrer"
+          <a href="https://blog.leox.me/posts/vlansetupopnsensewithl3switch/"
+             target="_blank" rel="noopener noreferrer"
              style="color:#111; text-decoration:none">
             VLAN setup on OPNsense with L3 switch
           </a>
         </li>
+
+        <!-- -------------------------------------------------------------- -->
         <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/proxmoxbasicstips/" 
-             target="_blank" rel="noreferrer"
+          <a href="https://blog.leox.me/posts/proxmoxbasicstips/"
+             target="_blank" rel="noopener noreferrer"
              style="color:#111; text-decoration:none">
             Proxmox basics tips
           </a>
         </li>
+
+        <!-- -------------------------------------------------------------- -->
         <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/proxmoxtruenas/" 
-             target="_blank" rel="noreferrer"
+          <a href="https://blog.leox.me/posts/proxmoxtruenas/"
+             target="_blank" rel="noopener noreferrer"
              style="color:#111; text-decoration:none">
             Proxmox + TrueNAS
           </a>
         </li>
+
+        <!-- -------------------------------------------------------------- -->
         <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/connectesp8266withdht11sensortothingspeak/" 
-             target="_blank" rel="noreferrer"
+          <a href="https://blog.leox.me/posts/connectesp8266withdht11sensortothingspeak/"
+             target="_blank" rel="noopener noreferrer"
              style="color:#111; text-decoration:none">
             Connect ESP8266 with DHT11 sensor to ThingSpeak
           </a>
         </li>
+
       </ul>
     </section>
+
+    <!-- ================================================================== -->
 
     <footer>
       Last update: 2025-09-21
     </footer>
+
+    <!-- ================================================================== -->
+
   </main>
 </body>
 </html>
-
