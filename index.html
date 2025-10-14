@@ -18,7 +18,6 @@
     .wrap{max-width:900px; margin:0 auto}
     header{
       display:flex; gap:24px; align-items:center; justify-content:space-between;
-      /* no bottom border */
       padding-bottom:20px; margin-bottom:28px;
     }
     .id{flex:1}
@@ -41,25 +40,18 @@
         align-items: center;
         text-align: center;
       }
-      .id{ 
-        width: 100%; 
-      }
+      .id{ width: 100%; }
       .avatar{
-        width: 96px; 
-        height: 96px; 
+        width: 96px;
+        height: 96px;
         margin-top: 12px;
       }
     }
-    
   </style>
 </head>
 
-<!-- ====================================================================== -->
-
 <body>
   <main class="wrap">
-
-    <!-- ================================================================== -->
 
     <header>
       <div class="id">
@@ -77,36 +69,42 @@
       <img class="avatar" src="https://avatars.githubusercontent.com/u/93765605?v=4" alt="Profile" />
     </header>
 
-    <!-- ================================================================== -->
-
     <section id="education">
       <h2>Education</h2>
       <div class="item">
-        <b>Politecnico di Milano</b> <span class="sub">— Computer Science (Software Engineering).</span>
+        <b>Politecnico di Milano</b> <span class="sub">— B.Sc. Computer Science (Software Engineering), 2024–2027</span>
+      </div>
+      <div class="item">
+        <b>ITIS Giovanni Giorgi</b> <span class="sub">— High School Diploma, Information Technology, 2019–2024</span>
       </div>
     </section>
-
-    <!-- ================================================================== -->
 
     <section id="experience">
       <h2>Experience</h2>
       <div class="item">
-        <b>DevOps — Luxottica</b>
-        <div class="sub">Automation, CI/CD, containers, monitoring.</div>
+        <b>DevOps Intern — Luxottica</b> <span class="sub">Feb 2025 – Present</span>
+        <div class="sub">
+          Managed 30+ RHEL VMs;</br>
+          Java fixes (JDBC, API, exceptions);</br>
+          Stack: Java, Maven, MySQL,Grafana, Checkmk, Nagios, Kibana, Linux, Docker, K8s, Azure;
+        </div>
       </div>
       <div class="item">
-        <b>Intern — Festo (DE)</b>
-        <div class="sub">Internship IT Operations.</div>
+        <b>Developer — Festo (DE)</b> <span class="sub">Jan 2023 – Feb 2023</span>
+        <div class="sub">
+          Built a Visual Basic tool to automate CSV imports into SAP following business logic;</br>Supported SAP/VBA tools & ticketing;
+        </div>
       </div>
     </section>
 
-    <!-- ================================================================== -->
+<!-- ================================================================== -->
 
     <section id="projects">
       <h2>Projects</h2>
       <div class="item">
         <b>Homelab</b> — <a href="https://network.leox.me" target="_blank" rel="noopener noreferrer">network.leox.me</a>
-        <div class="sub">Cluster, virtualization, personal services.</div>
+        <div class="sub">Docker & Kubernetes (MetalLB, Longhorn); Proxmox/KVM/QEMU; Ansible; monitoring (Grafana/Prometheus);
+          networking: VLANs, IDS/IPS (Suricata), IoT, Cloudflare proxy, DMZ.</div>
       </div>
       <div class="item">
         <b>GitHub</b> — <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">Leox1024</a>
@@ -114,23 +112,33 @@
       </div>
     </section>
 
-    <!-- ================================================================== -->
+<!-- ================================================================== -->
+
+    <section id="certs">
+      <h2>Licenses & Certifications</h2>
+      <ul>
+        <li>CCNA: Introduction to Networks — Cisco (May 2024)</li>
+        <li>Cisco DevNet Associate — Cisco (May 2023)</li>
+      </ul>
+    </section>
+
+<!-- ================================================================== -->
 
     <section id="skills">
       <h2>Skills</h2>
       <ul>
         <li>Linux, Shell</li>
         <li>Docker, Kubernetes</li>
-        <li>AWS, Azure</li>
-        <li>Git, CI/CD</li>
-        <li>PostgreSQL, Nginx</li>
-        <li>C/C++, Python, Rust</li>
-        <li>Arduino / embedded</li>
-        <li>Electronics</li>
+        <li>AWS, Azure, Proxmox</li>
+        <li>Networking, Infra, Security </li>
+        <li>Grafana, Prometheus, Checkmk, Nagios</li>
+        <li>C/C++, Java, Git, Bash</li>
+        <li>System Design, CI/CD, IaC</li>
+        <li>Arduino / embedded / electronics</li>
       </ul>
     </section>
 
-    <!-- ================================================================== -->
+<!-- ================================================================== -->
 
     <section id="posts">
       <h2>Latest Posts</h2>
@@ -178,10 +186,8 @@
     <!-- ================================================================== -->
 
     <footer>
-      Last update: 2025-09-24
+      EOF
     </footer>
-
-    <!-- ================================================================== -->
 
   </main>
 </body>
