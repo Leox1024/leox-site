@@ -2,16 +2,25 @@
 <html lang="en">
 
 <!-- ================================================================== -->
-  
+<!-- HEAD -->
+<!-- ================================================================== -->
+
 <head>
-  <link rel="icon" src="logo.jpg" type="image/png">
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- META -->
+  <!-- ------------------------------------------------------------------ -->
+
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>leox</title>
   <meta name="description" content="Leonardo Cremonti" />
-  
-  <!-- ================================================================== -->
-  
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- STYLE -->
+  <!-- ------------------------------------------------------------------ -->
+
   <style>
     :root{ --fg:#111; --muted:#555; --accent:#0a0a0a }
     html,body{height:100%}
@@ -21,23 +30,61 @@
       line-height:1.6; font-size:16px;
     }
     .wrap{max-width:900px; margin:0 auto}
+
     header{
       display:flex; gap:24px; align-items:center; justify-content:space-between;
       padding-bottom:20px; margin-bottom:28px;
     }
+
     .id{flex:1}
     .name{font-weight:700; font-size:28px; letter-spacing:0.3px; margin:0}
     .tagline{margin:6px 0 0; color:var(--muted)}
     .avatar{width:20%; height:auto; border-radius:8px; margin-top:3%}
 
     section{margin:40px 0}
-    h2{font-size:22px; margin:0 0 16px 0; padding:0; font-weight:700; border-bottom:1px solid #e5e5e5;}
+    h2{
+      font-size:22px;
+      margin:0 0 16px 0;
+      padding:0;
+      font-weight:700;
+      border-bottom:1px solid #e5e5e5;
+    }
+
     .item{margin:10px 0}
     .item b{font-weight:600}
     .sub{color:var(--muted)}
+
     ul{margin:8px 0 0 18px}
     li{margin:4px 0}
-    footer{margin-top:40px; padding-top:16px; padding-bottom:24px; margin-bottom:40px; border-top:1px solid #e5e5e5; color:var(--muted); font-size:14px}
+
+    footer{
+      margin-top:40px;
+      padding-top:16px;
+      padding-bottom:24px;
+      margin-bottom:40px;
+      border-top:1px solid #e5e5e5;
+      color:var(--muted);
+      font-size:14px
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* POST CSS */
+    /* ------------------------------------------------------------------ */
+
+    .posts-list{list-style:none; padding:0; margin:0}
+    .posts-list li{margin:6px 0}
+    .post-link{color:#111; text-decoration:none}
+    .post-link:hover,
+    .post-link:focus-visible{text-decoration:underline}
+
+    a:focus-visible{
+      outline:2px solid #111;
+      outline-offset:2px
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* MEDIA-CSS */
+    /* ------------------------------------------------------------------ */
 
     @media (max-width:500px){
       header{
@@ -53,13 +100,19 @@
     }
   </style>
 
-  <!-- ================================================================== -->
-
-
 </head>
 
+<!-- ================================================================== -->
+<!-- BODY -->
+<!-- ================================================================== -->
+
 <body>
+
   <main class="wrap">
+
+    <!-- ================================================================ -->
+    <!-- HEADER -->
+    <!-- ================================================================ -->
 
     <header>
       <div class="id">
@@ -74,160 +127,189 @@
           or <a href="mailto:leonardo@leox.me">send me an email</a>.
         </p>
       </div>
-      <img class="avatar" src="about.jpg" alt="profile" />
+
+      <img class="avatar" src="about.jpg" alt="profile" loading="lazy" />
     </header>
 
-    <!-- ================================================================== -->
-    
+    <!-- ================================================================ -->
+    <!-- EDUCATION -->
+    <!-- ================================================================ -->
+
     <section id="education">
-      
+
       <h2>Education</h2>
-      
+
       <div class="item">
-        <b>Politecnico di Milano</b> <span class="sub">— B.Sc. Computer Science (Software Engineering), 2024–2027</span>
+        <b>Politecnico di Milano</b>
+        <span class="sub">— B.Sc. Computer Science (Software Engineering), 2024–2027</span>
       </div>
-      
+
       <div class="item">
-        <b>ITIS Giovanni Giorgi</b> <span class="sub">— High School Diploma, Information Technology, 2019–2024</span>
+        <b>ITIS Giovanni Giorgi</b>
+        <span class="sub">— High School Diploma, Information Technology, 2019–2024</span>
       </div>
-      
+
     </section>
 
-    <!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- EXPRERIENCE -->
+    <!-- ================================================================ -->
 
     <section id="experience">
-      
+
       <h2>Experience</h2>
-      
+
       <div class="item">
-        <b>DevOps Intern — Luxottica</b> <span class="sub">Feb 2025 – Present</span>
+        <b>DevOps Intern — Luxottica</b>
+        <span class="sub">Feb 2025 – Present</span>
+
         <div class="sub">
           <ul>
-            <li> Managed 30+ RHEL VMs;</br>
-            <li> Java fixes (JDBC, API, exceptions);</br>
-            <li> Stack: Java, Maven, MySQL,Grafana, Checkmk, Nagios, Kibana, Linux, Docker, K8s, Azure;
+            <li>Managed 30+ RHEL VMs;</li>
+            <li>Java fixes (JDBC, API, exceptions);</li>
+            <li>Stack: Java, Maven, MySQL, Grafana, Checkmk, Nagios, Kibana, Linux, Docker, K8s, Azure;</li>
           </ul>
         </div>
       </div>
-      
+
       <div class="item">
-        <b>Developer — Festo (DE)</b> <span class="sub">Jan 2023 – Feb 2023</span>
+        <b>Developer — Festo (DE)</b>
+        <span class="sub">Jan 2023 – Feb 2023</span>
+
         <div class="sub">
           <ul>
-            <li> Built a Visual Basic tool to automate CSV imports into SAP following business logic;
-            <li> Supported SAP/VBA tools & ticketing;
-          </li>  
+            <li>Built a Visual Basic tool to automate CSV imports into SAP following business logic;</li>
+            <li>Supported SAP/VBA tools & ticketing;</li>
+          </ul>
         </div>
       </div>
-      
+
     </section>
 
-<!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- PROJECTS -->
+    <!-- ================================================================ -->
 
     <section id="projects">
+
       <h2>Projects</h2>
+
       <div class="item">
-        <b>Homelab</b> — <a href="https://network.leox.me" target="_blank" rel="noopener noreferrer">network.leox.me</a>
+        <b>Homelab</b> —
+        <a href="https://network.leox.me" target="_blank" rel="noopener noreferrer">network.leox.me</a>
+
         <div class="sub">
           <ul>
-            <li> Docker & Kubernetes (MetalLB, Longhorn), Proxmox/KVM/QEMU, Ansible, Grafana, Prometheus;
-            <li> Networking, TCP/UDP, VLANs, IDS/IPS (Suricata), Cloudflare Proxy/Gateway, DMZ;
+            <li>Docker & Kubernetes (MetalLB, Longhorn), Proxmox/KVM/QEMU, Ansible, Grafana, Prometheus;</li>
+            <li>Networking, TCP/UDP, VLANs, IDS/IPS (Suricata), Cloudflare Proxy/Gateway, DMZ;</li>
           </ul>
-        </div>  
+        </div>
       </div>
-      
+
       <div class="item">
-        <b>GitHub</b> — <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">leox1024</a>
+        <b>GitHub</b> —
+        <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">leox1024</a>
+
         <div class="sub">
-        <ul>
-          <li> Small tools, experiments and notes;
-        </ul>
-        </div>  
+          <ul>
+            <li>Small tools, experiments and notes;</li>
+          </ul>
+        </div>
       </div>
-    
+
     </section>
 
-<!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- LICENCE / CERT -->
+    <!-- ================================================================ -->
 
     <section id="certs">
-      
+
       <h2>Licenses & Certifications</h2>
+
       <ul>
-        <li>CCNA: Introduction to Networks: Cisco (May 2024);
-        <li>Cisco DevNet Associate: Cisco (May 2023);
+        <li>CCNA: Introduction to Networks: Cisco (May 2024);</li>
+        <li>Cisco DevNet Associate: Cisco (May 2023);</li>
       </ul>
-      
+
     </section>
 
-<!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- SKILLS -->
+    <!-- ================================================================ -->
 
     <section id="skills">
-      
+
       <h2>Skills</h2>
+
       <ul>
-        <li>Linux, Shell;
-        <li>Docker, Kubernetes;
-        <li>AWS, Azure, Proxmox;
-        <li>Networking, Infra, Security;
-        <li>Grafana, Prometheus, Checkmk, Nagios;
-        <li>C/C++, Java, Git, Bash;
-        <li>System Design, CI/CD, IaC;
-        <li>Arduino, embedded, electronics;
+        <li>Linux, Shell;</li>
+        <li>Docker, Kubernetes;</li>
+        <li>AWS, Azure, Proxmox;</li>
+        <li>Networking, Infra, Security;</li>
+        <li>Grafana, Prometheus, Checkmk, Nagios;</li>
+        <li>C/C++, Java, Git, Bash;</li>
+        <li>System Design, CI/CD, IaC;</li>
+        <li>Arduino, embedded, electronics;</li>
       </ul>
-    
+
     </section>
 
-<!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- LATEST POST -->
+    <!-- ================================================================ -->
 
     <section id="posts">
-      <h2>Latest Posts</h2>
-      <ul style="list-style:none; padding:0; margin:0">
 
-        <!-- -------------------------------------------------------------- -->
-        <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/vlansetupopnsensewithl3switch/"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#111; text-decoration:none">
+      <h2>Latest Posts</h2>
+
+      <ul class="posts-list">
+
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/vlansetupopnsensewithl3switch/"
+             target="_blank" rel="noopener noreferrer">
             VLAN setup on OPNsense with L3 switch
           </a>
         </li>
 
-        <!-- -------------------------------------------------------------- -->
-        <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/proxmoxbasicstips/"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#111; text-decoration:none">
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/proxmoxbasicstips/"
+             target="_blank" rel="noopener noreferrer">
             Proxmox basics tips
           </a>
         </li>
 
-        <!-- -------------------------------------------------------------- -->
-        <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/proxmoxtruenas/"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#111; text-decoration:none">
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/proxmoxtruenas/"
+             target="_blank" rel="noopener noreferrer">
             Proxmox + TrueNAS
           </a>
         </li>
 
-        <!-- -------------------------------------------------------------- -->
-        <li style="margin:6px 0">
-          <a href="https://blog.leox.me/posts/connectesp8266withdht11sensortothingspeak/"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#111; text-decoration:none">
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/connectesp8266withdht11sensortothingspeak/"
+             target="_blank" rel="noopener noreferrer">
             Connect ESP8266 with DHT11 sensor to ThingSpeak
           </a>
         </li>
 
       </ul>
+
     </section>
 
-    <!-- ================================================================== -->
+    <!-- ================================================================ -->
+    <!-- END -->
+    <!-- ================================================================ -->
 
     <footer>
       EOF
     </footer>
 
   </main>
+
 </body>
 </html>
