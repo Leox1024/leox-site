@@ -1,3 +1,3 @@
-## my personal webpage
+my personal webpage
 
 https://leox.me
