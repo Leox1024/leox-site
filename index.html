@@ -18,46 +18,56 @@
   <meta name="twitter:card" content="summary">
 
   <style>
-    :root{--fg:#111; --muted:#555; --line:#e5e5e5; --bg:#f4f4f4}
+    :root{--fg:#111; --muted:#555; --line:#e0e0e0; --bg:#f4f4f4}
     @media (prefers-color-scheme:dark){
       :root{--fg:#e4e4e4; --muted:#9a9a9a; --line:#2c2c2c; --bg:#121212}
     }
 
     body{
-      margin:0; padding:24px; background:var(--bg); color:var(--fg);
+      margin:0; padding:48px 24px; background:var(--bg); color:var(--fg);
       font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      line-height:1.6; font-size:16px;
+      font-size:16px; line-height:1.6;
     }
-    main{max-width:900px; margin:0 auto}
+    main{max-width:760px; margin:0 auto}
+    p, li{text-wrap:pretty}
 
     a{color:inherit; text-underline-offset:2px}
     a:hover{text-decoration-thickness:2px}
     a:focus-visible{outline:2px solid var(--fg); outline-offset:2px}
 
-    header{display:flex; gap:24px; align-items:center; justify-content:space-between; margin-bottom:28px}
-    h1{font-size:28px; margin:0}
-    header p{margin:6px 0 0}
-    .avatar{width:180px; height:auto; border-radius:8px}
+    header{display:flex; gap:24px; align-items:center; justify-content:space-between}
+    h1{font-size:28px; line-height:1.3; margin:0}
+    header p{margin:8px 0 0}
+    .avatar{width:120px; height:auto; border-radius:8px}
 
-    section{margin:40px 0}
-    h2{font-size:22px; margin:0 0 16px; border-bottom:1px solid var(--line)}
-    .item{margin:10px 0}
-    .item b{font-weight:600}
+    section{margin-top:40px}
+    h2{font-size:18px; margin:0 0 12px; padding-bottom:4px; border-bottom:1px solid var(--line)}
+
     .sub{color:var(--muted)}
-    ul{margin:8px 0 0 18px}
-    li{margin:4px 0}
+    .item{margin:16px 0}
+    .item p{margin:2px 0 0}
+    .head, .rows li{display:flex; flex-wrap:wrap; justify-content:space-between; column-gap:16px}
+    .head b{font-weight:600}
+    .head > span, .rows li > span + span{white-space:nowrap}
 
-    footer{margin:40px 0; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+    ul{margin:4px 0 0; padding-left:2ch; list-style:"- "}
+    li{margin:2px 0}
+    .rows{margin:0; padding:0; list-style:none}
+    .rows li{margin:6px 0}
+
+    footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
 
     @media (max-width:500px){
+      body{padding:24px 16px}
       header{flex-direction:column-reverse; align-items:flex-start; gap:16px}
-      .avatar{width:96px}
+      h1{font-size:24px}
+      .avatar{width:80px}
     }
 
     @media print{
       :root{--fg:#000; --muted:#333; --line:#bbb; --bg:#fff}
-      body{padding:0; font-size:11pt}
-      section{margin:20px 0}
+      body{padding:0; font-size:10.5pt}
+      h2{break-after:avoid}
       .item{break-inside:avoid}
       a{text-decoration:none}
       footer{display:none}
@@ -89,18 +99,16 @@
       <h2>Experience</h2>
 
       <div class="item">
-        <b>IT department — PoliNetwork</b>
-        <span class="sub">Mar 2026 – present</span>
-        <br>Student network of Politecnico di Milano, part-time
+        <div class="head"><b>IT department — PoliNetwork</b> <span class="sub">Mar 2026 – present</span></div>
+        <p class="sub">Student network of Politecnico di Milano, part-time</p>
         <ul class="sub">
           <li>GitOps on K3s with Flux, Azure via Terraform, Cloudflare Tunnel — <a href="https://github.com/PoliNetworkOrg/polinetwork-cd">polinetwork-cd</a></li>
         </ul>
       </div>
 
       <div class="item">
-        <b>DevOps intern contract — EssilorLuxottica S.A.</b>
-        <span class="sub">Feb 2025 – Feb 2026</span>
-        <br>Employed by 3kNet SRL and assigned to Luxottica’s enterprise medical/health applications: production environments and CI/CD
+        <div class="head"><b>DevOps intern contract — EssilorLuxottica S.A.</b> <span class="sub">Feb 2025 – Feb 2026</span></div>
+        <p class="sub">Employed by 3kNet SRL and assigned to Luxottica’s enterprise medical/health applications: production environments and CI/CD</p>
         <ul class="sub">
           <li>Managed 30+ RHEL VMs</li>
           <li>Java: JDBC, APIs, exception handling</li>
@@ -109,8 +117,7 @@
       </div>
 
       <div class="item">
-        <b>Developer intern — Festo S.p.A.</b>
-        <span class="sub">Jan 2023 – Feb 2023</span>
+        <div class="head"><b>Developer intern — Festo S.p.A.</b> <span class="sub">Jan 2023 – Feb 2023</span></div>
         <ul class="sub">
           <li>Built a VBA tool that automates CSV imports into SAP following business logic</li>
           <li>Supported SAP/VBA tools and ticketing</li>
@@ -122,8 +129,7 @@
       <h2>Projects</h2>
 
       <div class="item">
-        <b>homelab-ansible-ops</b> — <a href="https://github.com/Leox1024/homelab-ansible-ops">github</a>
-        <span class="sub">100+ stars</span>
+        <div class="head"><b>homelab-ansible-ops</b> <span class="sub"><a href="https://github.com/Leox1024/homelab-ansible-ops">github</a> · 100+ stars</span></div>
         <ul class="sub">
           <li>Ansible playbooks run from Semaphore: updates, hardening, Docker, Proxmox VE, Checkmk checks</li>
           <li>VLAN provisioning on OPNsense and the switch, encrypted VMs bound to Tang</li>
@@ -131,27 +137,13 @@
       </div>
 
       <div class="item">
-        <b>Homelab</b> — <a href="https://docs.leox.me">docs.leox.me</a> · <a href="https://status.leox.me">status.leox.me</a>
+        <div class="head"><b>Homelab</b> <span class="sub"><a href="https://docs.leox.me">docs</a> · <a href="https://status.leox.me">status</a></span></div>
         <ul class="sub">
           <li>Proxmox VE 2-node cluster, Proxmox Backup Server</li>
           <li>OPNsense with multi-WAN, Suricata IDS/IPS, DMZ; Brocade L3 switch, LACP, VLANs</li>
           <li>LUKS2 VMs unlocked at boot by Clevis + Tang</li>
           <li>Docker, Kubernetes (MetalLB, Longhorn); Checkmk, Prometheus, Grafana</li>
-          <li>Interactive map of network, power, servers and storage, with failure simulations</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <b>sgrodolcraft</b> — <a href="https://github.com/Leox1024/sgrodolcraft">github</a>
-        <ul class="sub">
-          <li>Minecraft server setup, fully reproducible as infrastructure as code</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <b>ezshell</b> — <a href="https://github.com/Leox1024/ezshell">github</a>
-        <ul class="sub">
-          <li>SSH shell in C that runs commands concurrently on multiple hosts</li>
+          <li>Docs: interactive map of network, power, servers and storage, with failure simulations</li>
         </ul>
       </div>
     </section>
@@ -160,30 +152,30 @@
       <h2>Education</h2>
 
       <div class="item">
-        <b>Politecnico di Milano</b>
-        <span class="sub">— B.Sc. Computer Science and Engineering, 2024–2027</span>
+        <div class="head"><b>Politecnico di Milano</b> <span class="sub">2024 – 2027</span></div>
+        <p class="sub">B.Sc. Computer Science and Engineering</p>
       </div>
 
       <div class="item">
-        <b>IIS Giovanni Giorgi</b>
-        <span class="sub">— Informatics and Telecommunications (84/100), 2019–2024</span>
+        <div class="head"><b>IIS Giovanni Giorgi</b> <span class="sub">2019 – 2024</span></div>
+        <p class="sub">Informatics and Telecommunications, 84/100</p>
       </div>
     </section>
 
     <section id="certs">
       <h2>Licenses &amp; Certifications</h2>
-      <ul>
-        <li>HAREC/CEPT amateur radio license — MIMIT, Italy (Aug 2026)</li>
-        <li>Cisco NetAcad — CCNA: Introduction to Networks (May 2024)</li>
-        <li>Cisco DevNet Associate (May 2023)</li>
-        <li>BLSD (Basic Life Support and Defibrillation) — Italian Red Cross (Oct 2025 – Oct 2027)</li>
+      <ul class="rows">
+        <li><span>HAREC/CEPT amateur radio license — callsign IU1WWV</span> <span class="sub">Aug 2026</span></li>
+        <li><span>Cisco NetAcad — CCNA: Introduction to Networks</span> <span class="sub">May 2024</span></li>
+        <li><span>Cisco DevNet Associate</span> <span class="sub">May 2023</span></li>
+        <li><span><abbr title="Basic Life Support and Defibrillation">BLSD</abbr> — Italian Red Cross</span> <span class="sub">Oct 2025 – Oct 2027</span></li>
       </ul>
     </section>
 
     <section id="volunteering">
       <h2>Volunteering</h2>
-      <ul>
-        <li>Rotaract Club Milano Europa Fenice — Distretto 2041</li>
+      <ul class="rows">
+        <li><span>Rotaract Club Milano Europa Fenice — Distretto 2041</span></li>
       </ul>
     </section>
 
