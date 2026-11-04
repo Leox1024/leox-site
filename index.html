@@ -1,188 +1,358 @@
 <!doctype html>
 <html lang="en">
+
+<!-- ================================================================== -->
+<!-- HEAD -->
+<!-- ================================================================== -->
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leonardo Cremonti (leox)</title>
-  <meta name="description" content="Computer engineering student at Politecnico di Milano. Infrastructure, networking, self-hosting.">
-  <meta name="color-scheme" content="light dark">
-  <link rel="canonical" href="https://leox.me/">
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- META -->
+  <!-- ------------------------------------------------------------------ -->
+
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="apple-touch-icon" href="icon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>leox</title>
+  <meta name="description" content="Leonardo Cremonti, also known as Leox. Computer engineering student at Politecnico di Milano." />
+  <meta property="og:title" content="Leonardo Cremonti – leox" />
+  <meta property="og:description" content="Computer engineering student at Politecnico di Milano." />
+  <meta property="og:image" content="https://leox.me/avatar.jpg" />
+  <meta property="og:url" content="https://leox.me/" />
 
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://leox.me/">
-  <meta property="og:title" content="Leonardo Cremonti (leox)">
-  <meta property="og:description" content="Computer engineering student at Politecnico di Milano. Infrastructure, networking, self-hosting.">
-  <meta property="og:image" content="https://leox.me/avatar.jpg">
-  <meta name="twitter:card" content="summary">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- STYLE -->
+  <!-- ------------------------------------------------------------------ -->
 
   <style>
-    :root{--fg:#111; --muted:#555; --line:#e0e0e0; --bg:#f4f4f4}
-    @media (prefers-color-scheme:dark){
-      :root{--fg:#e4e4e4; --muted:#9a9a9a; --line:#2c2c2c; --bg:#121212}
-    }
-
+    :root{ --fg:#111; --muted:#555; --accent:#0a0a0a }
+    html,body{height:100%}
     body{
-      margin:0; padding:48px 24px; background:var(--bg); color:var(--fg);
-      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      font-size:16px; line-height:1.6;
+      margin:0; padding:24px; background:#F4F4F4; color:var(--fg);
+      font-family:"Inconsolata", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      line-height:1.6; font-size:16px;
     }
-    main{max-width:760px; margin:0 auto}
-    p, li{text-wrap:pretty}
+    .wrap{max-width:900px; margin:0 auto}
 
-    a{color:inherit; text-underline-offset:2px}
-    a:hover{text-decoration-thickness:2px}
-    a:focus-visible{outline:2px solid var(--fg); outline-offset:2px}
+    header{
+      display:flex; gap:24px; align-items:center; justify-content:space-between;
+      padding-bottom:20px; margin-bottom:28px;
+    }
 
-    header{display:flex; gap:24px; align-items:center; justify-content:space-between}
-    h1{font-size:28px; line-height:1.3; margin:0}
-    header p{margin:8px 0 0}
-    .avatar{width:120px; height:auto; border-radius:8px}
+    .id{flex:1}
+    .name{font-weight:700; font-size:28px; letter-spacing:0.3px; margin:0}
+    .tagline{margin:6px 0 0; color:var(--muted)}
+    .avatar{width:20%; height:auto; border-radius:8px; margin-top:3%}
 
-    section{margin-top:40px}
-    h2{font-size:18px; margin:0 0 12px; padding-bottom:4px; border-bottom:1px solid var(--line)}
+    section{margin:40px 0}
+    h2{
+      font-size:22px;
+      margin:0 0 16px 0;
+      padding:0;
+      font-weight:700;
+      border-bottom:1px solid #e5e5e5;
+    }
 
+    .item{margin:10px 0}
+    .item b{font-weight:600}
     .sub{color:var(--muted)}
-    .item{margin:16px 0}
-    .item p{margin:2px 0 0}
-    .head, .rows li{display:flex; flex-wrap:wrap; justify-content:space-between; column-gap:16px}
-    .head b{font-weight:600}
-    .head > span, .rows li > span + span{white-space:nowrap}
 
-    ul{margin:4px 0 0; padding-left:2ch; list-style:"- "}
-    li{margin:2px 0}
-    .rows{margin:0; padding:0; list-style:none}
-    .rows li{margin:6px 0}
+    ul{margin:8px 0 0 18px}
+    li{margin:4px 0}
 
-    footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+    footer{
+      margin-top:40px;
+      padding-top:16px;
+      padding-bottom:24px;
+      margin-bottom:40px;
+      border-top:1px solid #e5e5e5;
+      color:var(--muted);
+      font-size:14px
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* POST CSS */
+    /* ------------------------------------------------------------------ */
+
+    .posts-list{list-style:none; padding:0; margin:0}
+    .posts-list li{margin:6px 0}
+    .post-link{color:#111; text-decoration:none}
+    .post-link:hover,
+    .post-link:focus-visible{text-decoration:underline}
+
+    a:focus-visible{
+      outline:2px solid #111;
+      outline-offset:2px
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* MEDIA-CSS */
+    /* ------------------------------------------------------------------ */
 
     @media (max-width:500px){
-      body{padding:24px 16px}
-      header{flex-direction:column-reverse; align-items:flex-start; gap:16px}
-      h1{font-size:24px}
-      .avatar{width:80px}
-    }
-
-    @media print{
-      :root{--fg:#000; --muted:#333; --line:#bbb; --bg:#fff}
-      body{padding:0; font-size:10.5pt}
-      h2{break-after:avoid}
-      .item{break-inside:avoid}
-      a{text-decoration:none}
-      footer{display:none}
+      header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .id{ width: 100%; }
+      .avatar{
+        width: 40%;
+        height: auto;
+      }
     }
   </style>
+
 </head>
 
+<!-- ================================================================== -->
+<!-- BODY -->
+<!-- ================================================================== -->
+
 <body>
-  <main>
+
+  <main class="wrap">
+
+    <!-- ================================================================ -->
+    <!-- HEADER -->
+    <!-- ================================================================ -->
 
     <header>
-      <div>
-        <h1>Leonardo Cremonti <span class="sub">— leox</span></h1>
-        <p class="sub">
-          Computer engineering student at Politecnico di Milano.<br>
-          Infrastructure, networking, self-hosting.
-        </p>
-        <p>
-          <a href="https://github.com/Leox1024">GitHub</a> ·
-          <a href="https://www.linkedin.com/in/leonardo-cremonti-45344123b">LinkedIn</a> ·
-          <a href="https://x.com/Leox1024">X</a> ·
-          <a href="mailto:leonardo@leox.me">leonardo@leox.me</a>
+      <div class="id">
+        <h1 class="name">Hi, I'm Leonardo – leox</h1>
+        <p class="tagline">
+          I’m Leonardo Cremonti, also known as Leox. I’m an Italian computer engineering student.
+          <br>
+          Find me on
+          <a href="https://x.com/Leox1024" target="_blank" rel="noopener noreferrer">X</a>,
+          <a href="https://www.linkedin.com/in/leonardo-cremonti-45344123b" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+          <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+          or <a href="mailto:leonardo@leox.me">send me an email</a>.
         </p>
       </div>
-      <img class="avatar" src="avatar.jpg" width="394" height="394" alt="Leonardo Cremonti">
+
+      <img class="avatar" src="avatar.jpg" alt="Leonardo Cremonti" />
     </header>
 
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="item">
-        <div class="head"><b>IT department — PoliNetwork</b> <span class="sub">Mar 2026 – present</span></div>
-        <p class="sub">Student network of Politecnico di Milano, part-time</p>
-        <ul class="sub">
-          <li>GitOps on K3s with Flux, Azure via Terraform, Cloudflare Tunnel — <a href="https://github.com/PoliNetworkOrg/polinetwork-cd">polinetwork-cd</a></li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="head"><b>DevOps intern contract — EssilorLuxottica S.A.</b> <span class="sub">Feb 2025 – Feb 2026</span></div>
-        <p class="sub">Employed by 3kNet SRL and assigned to Luxottica’s enterprise medical/health applications: production environments and CI/CD</p>
-        <ul class="sub">
-          <li>Managed 30+ RHEL VMs</li>
-          <li>Java: JDBC, APIs, exception handling</li>
-          <li>Stack: Java, Maven, MySQL, Grafana, Checkmk, Nagios, Kibana, Linux, Docker, K8s, Azure</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="head"><b>Developer intern — Festo S.p.A.</b> <span class="sub">Jan 2023 – Feb 2023</span></div>
-        <ul class="sub">
-          <li>Built a VBA tool that automates CSV imports into SAP following business logic</li>
-          <li>Supported SAP/VBA tools and ticketing</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="item">
-        <div class="head"><b>homelab-ansible-ops</b> <span class="sub"><a href="https://github.com/Leox1024/homelab-ansible-ops">github</a> · 100+ stars</span></div>
-        <ul class="sub">
-          <li>Ansible playbooks run from Semaphore: updates, hardening, Docker, Proxmox VE, Checkmk checks</li>
-          <li>VLAN provisioning on OPNsense and the switch, encrypted VMs bound to Tang</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="head"><b>Homelab</b> <span class="sub"><a href="https://docs.leox.me">docs</a> · <a href="https://status.leox.me">status</a></span></div>
-        <ul class="sub">
-          <li>Proxmox VE 2-node cluster, Proxmox Backup Server</li>
-          <li>OPNsense with multi-WAN, Suricata IDS/IPS, DMZ; Brocade L3 switch, LACP, VLANs</li>
-          <li>LUKS2 VMs unlocked at boot by Clevis + Tang</li>
-          <li>Docker, Kubernetes (MetalLB, Longhorn); Checkmk, Prometheus, Grafana</li>
-          <li>Docs: interactive map of network, power, servers and storage, with failure simulations</li>
-        </ul>
-      </div>
-    </section>
+    <!-- ================================================================ -->
+    <!-- EDUCATION -->
+    <!-- ================================================================ -->
 
     <section id="education">
+
       <h2>Education</h2>
 
       <div class="item">
-        <div class="head"><b>Politecnico di Milano</b> <span class="sub">2024 – 2027</span></div>
-        <p class="sub">B.Sc. Computer Science and Engineering</p>
+        <b>Politecnico di Milano</b>
+        <span class="sub">— B.Sc. Computer Science (Software Engineering), 2024–2027</span>
       </div>
 
       <div class="item">
-        <div class="head"><b>IIS Giovanni Giorgi</b> <span class="sub">2019 – 2024</span></div>
-        <p class="sub">Informatics and Telecommunications, 84/100</p>
+        <b>IIS Giovanni Giorgi</b>
+        <span class="sub">— Informatics and Telecommunications (84/100), 2019–2024</span>
       </div>
+
     </section>
+
+    <!-- ================================================================ -->
+    <!-- EXPRERIENCE -->
+    <!-- ================================================================ -->
+
+    <section id="experience">
+
+      <h2>Experience</h2>
+
+      <div class="item">
+        <b>IT Department member — PoliNetwork</b>
+        <span class="sub">Mar 2026 – Present</span>
+        <div class="sub">
+          <ul>
+            <li>Stack: K3s, Flux, Terraform, Azure, Cloudflare Tunnel</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <b>DevOps intern contract — EssilorLuxottica S.A. </b>
+        <span class="sub">Feb 2025 – Feb 2026</span>
+        <br>Employed by 3kNet SRL as a Devops and assigned to Luxottica’s enterprise medical/health applications, supporting production environments and CI/CD workflows
+        <div class="sub">
+          <ul>
+            <li>Managed 30+ RHEL VMs</li>
+            <li>Java (JDBC, API, exceptions)</li>
+            <li>Stack: Java, Maven, MySQL, Grafana, Checkmk, Nagios, Kibana, Linux, Docker, K8s, Azure</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <b>Developer stage —  Festo S.p.A </b>
+        <span class="sub">Jan 2023 – Feb 2023</span>
+
+        <div class="sub">
+          <ul>
+            <li>Built a visual basic tool to automate CSV imports into SAP following business logic</li>
+            <li>Supported SAP/VBA tools & ticketing</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- PROJECTS -->
+    <!-- ================================================================ -->
+
+    <section id="projects">
+
+      <h2>Projects</h2>
+
+      <div class="item">
+        <b>Homelab</b> —
+        <a href="https://docs.leox.me" target="_blank" rel="noopener noreferrer">docs.leox.me</a>
+
+        <div class="sub">
+          <ul>
+            <li>Docker & Kubernetes (MetalLB, Longhorn), Proxmox/KVM/QEMU, Ansible, Grafana, Prometheus</li>
+            <li>Networking, TCP/UDP, VLANs, IDS/IPS (Suricata), Cloudflare Proxy/Gateway, DMZ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <b>homelab-ansible-ops</b> —
+        <a href="https://github.com/Leox1024/homelab-ansible-ops" target="_blank" rel="noopener noreferrer">github</a>
+
+        <div class="sub">
+          <ul>
+            <li>Modular playbooks for system updates, hardening, Docker, Kubernetes, Proxmox VE and more</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <b>GitHub</b> —
+        <a href="https://github.com/Leox1024" target="_blank" rel="noopener noreferrer">leox1024</a>
+
+        <div class="sub">
+          <ul>
+            <li>Small tools, C++ code snippets, experiments and notes</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- LICENCE / CERT / OTHER -->
+    <!-- ================================================================ -->
 
     <section id="certs">
-      <h2>Licenses &amp; Certifications</h2>
-      <ul class="rows">
-        <li><span>HAREC/CEPT amateur radio license — callsign IU1WWV</span> <span class="sub">Aug 2026</span></li>
-        <li><span>Cisco NetAcad — CCNA: Introduction to Networks</span> <span class="sub">May 2024</span></li>
-        <li><span>Cisco DevNet Associate</span> <span class="sub">May 2023</span></li>
-        <li><span><abbr title="Basic Life Support and Defibrillation">BLSD</abbr> — Italian Red Cross</span> <span class="sub">Oct 2025 – Oct 2027</span></li>
+
+      <h2>Licenses & Certifications</h2>
+
+      <ul>
+        <li>HAREC/CEPT Amateur Radio License (IU1WWV): MIMIT (Aug 2026)</li>
+        <li>CCNA: Introduction to Networks: Cisco (May 2024)</li>
+        <li>Cisco DevNet Associate: Cisco (May 2023)</li>
       </ul>
+
     </section>
 
-    <section id="volunteering">
-      <h2>Volunteering</h2>
-      <ul class="rows">
-        <li><span>Rotaract Club Milano Europa Fenice — Distretto 2041</span></li>
+    <section id="other">
+
+      <h2>Other</h2>
+
+      <ul>
+        <li>Driving License Category B, Italy</li>
+        <li>Volunteering Rotaract Club Milano Europa Fenice - Distretto 2041</li>
+        <li>BLSD Provider (Basic Life Support and Defibrillation): CRI (Oct 2025 - Oct 2027)</li>
       </ul>
+
+    </section>
+    
+    <!-- ================================================================ -->
+    <!-- SKILLS -->
+    <!-- ================================================================ -->
+
+    <!--
+    
+    <section id="skills">
+
+      <h2>Skills</h2>
+
+      <ul>
+        <li>Linux, Shell;</li>
+        <li>Docker, Kubernetes;</li>
+        <li>AWS, Azure, Proxmox;</li>
+        <li>Networking, Infra, Security;</li>
+        <li>Grafana, Prometheus, Checkmk, Nagios;</li>
+        <li>C/C++, Java, Git, Bash;</li>
+        <li>System Design, CI/CD, IaC;</li>
+        <li>Arduino, embedded, electronics;</li>
+      </ul>
+
     </section>
 
-    <footer>
-      Updated Nov 2026 · <a href="https://github.com/Leox1024/leox-site">source</a>
-    </footer>
+    -->
+    
+    <!-- ================================================================ -->
+    <!-- LATEST POST -->
+    <!-- ================================================================ -->
+
+    <!--
+    
+    <section id="posts">
+
+      <h2>Latest Posts</h2>
+
+      <ul class="posts-list">
+
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/vlansetupopnsensewithl3switch/"
+             target="_blank" rel="noopener noreferrer">
+            VLAN setup on OPNsense with L3 switch
+          </a>
+        </li>
+
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/proxmoxbasicstips/"
+             target="_blank" rel="noopener noreferrer">
+            Proxmox basics tips
+          </a>
+        </li>
+
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/proxmoxtruenas/"
+             target="_blank" rel="noopener noreferrer">
+            Proxmox + TrueNAS
+          </a>
+        </li>
+
+        <li>
+          <a class="post-link"
+             href="https://blog.leox.me/posts/connectesp8266withdht11sensortothingspeak/"
+             target="_blank" rel="noopener noreferrer">
+            Connect ESP8266 with DHT11 sensor to ThingSpeak
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+    -->
+
+    <!-- ================================================================ -->
+    <!-- END -->
+    <!-- ================================================================ -->
 
   </main>
+
 </body>
 </html>
